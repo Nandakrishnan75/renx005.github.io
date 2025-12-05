@@ -11,14 +11,15 @@
     <meta name="author" content="Rena Elza Viju">
     <meta name="keywords" content="Rena, Elza, Viju, full-stack developer, MCA student, React, Python, portfolio, web developer, India">
 
-    <!-- ✅ Canonical URL for SEO -->
+    <!-- ✅ Canonical URL -->
     <link rel="canonical" href="https://renx005.github.io/">
 
-    <!-- ✅ Open Graph / Social Sharing -->
+    <!-- ✅ Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Rena Elza Viju | Full-Stack Developer">
     <meta property="og:description" content="MCA Student | React & Python Developer | Full-Stack Enthusiast">
     <meta property="og:url" content="https://renx005.github.io/">
+    <!-- You can keep using your image here just for previews, it's not shown in page -->
     <meta property="og:image" content="https://renx005.github.io/assets/rena-elza-viju.jpg">
 
     <!-- ✅ Twitter Card -->
@@ -27,7 +28,7 @@
     <meta name="twitter:description" content="MCA Student | React & Python Developer | Full-Stack Enthusiast">
     <meta name="twitter:image" content="https://renx005.github.io/assets/rena-elza-viju.jpg">
 
-    <!-- ✅ Favicon -->
+    <!-- Favicon (can be any small logo later) -->
     <link rel="icon" href="assets/rena-elza-viju.jpg" type="image/jpeg">
 
     <!-- Tailwind CDN -->
@@ -45,26 +46,26 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #020617; /* almost-black */
+            font-family: "Inter", sans-serif;
+            background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
             color: #e2e8f0;
             overflow-x: hidden;
         }
 
         .heading-font {
-            font-family: 'Playfair Display', serif;
+            font-family: "Playfair Display", serif;
         }
 
         .accent-color {
-            color: #10b981; /* emerald */
+            color: #22c55e;
         }
 
         .accent-bg {
-            background: linear-gradient(135deg, #10b981, #22c55e);
+            background-image: linear-gradient(135deg, #22c55e, #4ade80);
         }
 
         .accent-bg-hover:hover {
-            background: linear-gradient(135deg, #22c55e, #6ee7b7);
+            background-image: linear-gradient(135deg, #4ade80, #bbf7d0);
         }
 
         .section-title {
@@ -73,72 +74,47 @@
             padding-bottom: 0.5rem;
             margin-bottom: 3rem;
             font-weight: 700;
-            color: #6ee7b7;
+            color: #a5f3fc;
         }
+
         .section-title::after {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             bottom: 0;
             width: 30%;
             height: 3px;
-            background-image: linear-gradient(to right, #10b981, #6ee7b7);
+            background-image: linear-gradient(to right, #22c55e, #a5f3fc);
             border-radius: 9999px;
         }
 
         .card-bg {
-            background: radial-gradient(circle at top left, rgba(16,185,129,0.15), transparent 55%),
-                        #020617;
-            border: 1px solid rgba(15,118,110,0.6);
+            background:
+                radial-gradient(circle at top left, rgba(34,197,94,0.18), transparent 60%),
+                #020617;
+            border: 1px solid rgba(30,64,175,0.6);
             box-shadow:
-                0 18px 40px rgba(15,118,110,0.28),
-                0 0 0 1px rgba(148,163,184,0.15);
+                0 18px 40px rgba(15,23,42,0.9),
+                0 0 0 1px rgba(148,163,184,0.12);
         }
 
-        .nav-link-item {
-            position: relative;
-            transition: all 0.25s ease;
-        }
-        .nav-link-item .label {
-            position: absolute;
-            left: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            white-space: nowrap;
-            padding: 0.45rem 0.75rem;
-            margin-left: 0.5rem;
-            background: #020617;
-            border: 1px solid rgba(45,212,191,0.6);
-            color: #e5e7eb;
-            border-radius: 999px;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.25s, margin-left 0.25s, visibility 0s 0.25s;
-            z-index: 60;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        .nav-link-item:hover .label {
-            opacity: 1;
-            visibility: visible;
-            margin-left: 0.9rem;
-            transition: opacity 0.25s, margin-left 0.25s;
+        /* Top navbar */
+        .nav-blur {
+            background: radial-gradient(circle at top left, rgba(34,197,94,0.22), transparent 60%),
+                        rgba(15,23,42,0.9);
+            backdrop-filter: blur(18px);
         }
 
-        /* Doodles background */
+        /* Doodles */
         @keyframes floatEffect {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
-            50% { transform: translate(30px, 60px) rotate(6deg); opacity: 0.06; }
+            0%   { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
+            50%  { transform: translate(30px, 60px) rotate(6deg); opacity: 0.06; }
             100% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
         }
 
         #global-tech-background {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             overflow: hidden;
             z-index: 0;
             pointer-events: none;
@@ -150,28 +126,29 @@
             animation: floatEffect 25s infinite alternate ease-in-out;
         }
 
-        .doodle-1 { top: 10vh; left: 8vw; font-size: 4.2rem; animation-duration: 27s; }
-        .doodle-2 { top: 78vh; right: 5vw; font-size: 3.6rem; animation-duration: 30s; animation-delay: 5s; }
-        .doodle-3 { bottom: 10vh; left: 52vw; font-size: 5.2rem; animation-duration: 26s; animation-delay: 10s; }
-        .doodle-4 { top: 28vh; left: 88vw; font-size: 3rem; animation-duration: 32s; animation-delay: 15s; }
-        .doodle-5 { top: 52vh; left: 20vw; font-size: 4.6rem; animation-duration: 27s; animation-delay: 2s; }
-        .doodle-6 { bottom: 38vh; right: 20vw; font-size: 4rem; animation-duration: 29s; animation-delay: 7s; }
-        .doodle-7 { top: 6vh; left: 64vw; font-size: 6rem; animation-duration: 35s; animation-delay: 12s; }
-        .doodle-8 { top: 70vh; left: 36vw; font-size: 3.4rem; animation-duration: 24s; animation-delay: 3s; }
-        .doodle-9 { bottom: 4vh; right: 58vw; font-size: 5rem; animation-duration: 33s; animation-delay: 9s; }
-        .doodle-10 { top: 20vh; right: 30vw; font-size: 4rem; animation-duration: 25s; animation-delay: 18s; }
+        .doodle-1 { top: 12vh; left: 6vw; font-size: 3.8rem; animation-duration: 27s; }
+        .doodle-2 { top: 72vh; right: 5vw; font-size: 3.2rem; animation-duration: 30s; animation-delay: 5s; }
+        .doodle-3 { bottom: 10vh; left: 50vw; font-size: 4.6rem; animation-duration: 26s; animation-delay: 10s; }
+        .doodle-4 { top: 28vh; left: 88vw; font-size: 2.8rem; animation-duration: 32s; animation-delay: 15s; }
+        .doodle-5 { top: 50vh; left: 22vw; font-size: 4.4rem; animation-duration: 27s; animation-delay: 2s; }
+        .doodle-6 { bottom: 38vh; right: 22vw; font-size: 3.6rem; animation-duration: 29s; animation-delay: 7s; }
+        .doodle-7 { top: 6vh; left: 62vw; font-size: 5.6rem; animation-duration: 35s; animation-delay: 12s; }
+        .doodle-8 { top: 68vh; left: 34vw; font-size: 3.2rem; animation-duration: 24s; animation-delay: 3s; }
+        .doodle-9 { bottom: 4vh; right: 56vw; font-size: 4.6rem; animation-duration: 33s; animation-delay: 9s; }
+        .doodle-10 { top: 20vh; right: 30vw; font-size: 3.6rem; animation-duration: 25s; animation-delay: 18s; }
 
         /* Typing cursor */
         .typing-cursor {
             display: inline-block;
             margin-left: 4px;
             animation: blink 1s step-start infinite;
-            color: #6ee7b7;
+            color: #a5f3fc;
             font-weight: 600;
         }
+
         @keyframes blink {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            50%      { opacity: 0; }
         }
 
         /* Scroll reveal */
@@ -180,6 +157,7 @@
             transform: translateY(26px);
             transition: opacity 0.9s ease, transform 0.9s ease;
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -188,476 +166,479 @@
 </head>
 <body class="selection:bg-emerald-700 selection:text-white">
 
-    <!-- FLOATING DOODLES (kept) -->
-    <div id="global-tech-background">
-        <span class="tech-doodle doodle-1"><i data-lucide="code-2"></i></span>
-        <span class="tech-doodle doodle-2"><i data-lucide="server-cog"></i></span>
-        <span class="tech-doodle doodle-3">{ }</span>
-        <span class="tech-doodle doodle-4"><i data-lucide="database"></i></span>
-        <span class="tech-doodle doodle-5"><i data-lucide="git-branch"></i></span>
-        <span class="tech-doodle doodle-6"><i data-lucide="terminal"></i></span>
-        <span class="tech-doodle doodle-7"><i data-lucide="cloud"></i></span>
-        <span class="tech-doodle doodle-8"><i data-lucide="cpu"></i></span>
-        <span class="tech-doodle doodle-9"><i data-lucide="zap"></i></span>
-        <span class="tech-doodle doodle-10"><i data-lucide="slash"></i></span>
-    </div>
+<!-- FLOATING DOODLES -->
+<div id="global-tech-background">
+    <span class="tech-doodle doodle-1"><i data-lucide="code-2"></i></span>
+    <span class="tech-doodle doodle-2"><i data-lucide="server"></i></span>
+    <span class="tech-doodle doodle-3">{ }</span>
+    <span class="tech-doodle doodle-4"><i data-lucide="database"></i></span>
+    <span class="tech-doodle doodle-5"><i data-lucide="git-branch"></i></span>
+    <span class="tech-doodle doodle-6"><i data-lucide="terminal"></i></span>
+    <span class="tech-doodle doodle-7"><i data-lucide="cloud"></i></span>
+    <span class="tech-doodle doodle-8"><i data-lucide="cpu"></i></span>
+    <span class="tech-doodle doodle-9"><i data-lucide="zap"></i></span>
+    <span class="tech-doodle doodle-10"><i data-lucide="slash"></i></span>
+</div>
 
-    <!-- Sidebar Nav -->
-    <nav class="fixed top-1/2 -translate-y-1/2 left-2 sm:left-4 z-40">
-        <div class="flex flex-col space-y-3 p-2 bg-black/60 backdrop-blur-sm rounded-full shadow-xl border border-emerald-600/70">
-            <a href="#home" class="nav-link-item group p-2 rounded-full bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25">
-                <i data-lucide="home" class="w-5 h-5"></i>
-                <span class="label">Home</span>
+<!-- TOP NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-40 nav-blur border-b border-slate-800/70">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+        <a href="#home" class="flex items-center space-x-2">
+            <div class="h-8 w-8 rounded-lg border border-emerald-500/70 flex items-center justify-center text-emerald-400 text-xs font-semibold">
+                RV
+            </div>
+            <div class="leading-tight">
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Portfolio</p>
+                <p class="text-sm font-semibold text-slate-100">Rena Elza Viju</p>
+            </div>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-300">
+            <a href="#home" class="hover:text-emerald-300">Home</a>
+            <a href="#skills" class="hover:text-emerald-300">Skills</a>
+            <a href="#projects" class="hover:text-emerald-300">Projects</a>
+            <a href="#education" class="hover:text-emerald-300">Education</a>
+            <a href="#certifications" class="hover:text-emerald-300">Certifications</a>
+            <a href="#contact" class="hover:text-emerald-300">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-3">
+            <a href="assets/rena-elza-viju-resume.pdf" target="_blank" download
+               class="hidden sm:inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-emerald-500/70 text-xs font-medium text-emerald-100 hover:bg-emerald-500/10">
+                <i data-lucide="file-down" class="w-4 h-4"></i>
+                <span>Resume</span>
             </a>
-            <a href="#about" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="user" class="w-5 h-5"></i>
-                <span class="label">About Me</span>
-            </a>
-            <a href="#skills" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="brain" class="w-5 h-5"></i>
-                <span class="label">Technical Skills</span>
-            </a>
-            <a href="#projects" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="rocket" class="w-5 h-5"></i>
-                <span class="label">Projects</span>
-            </a>
-            <a href="#education" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-                <span class="label">Education</span>
-            </a>
-            <a href="#certifications" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="award" class="w-5 h-5"></i>
-                <span class="label">Certifications</span>
-            </a>
-            <a href="#contact" class="nav-link-item group p-2 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/15">
-                <i data-lucide="mail" class="w-5 h-5"></i>
-                <span class="label">Contact</span>
+            <a href="#contact"
+               class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full accent-bg accent-bg-hover text-xs font-semibold text-slate-950 shadow-md">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Contact</span>
             </a>
         </div>
     </nav>
+</header>
 
-    <!-- Mobile quick buttons -->
-    <div class="fixed bottom-6 right-4 z-40 flex flex-col space-y-3 md:hidden">
-        <a href="#contact"
-           class="flex items-center justify-center space-x-2 px-4 py-3 rounded-full shadow-lg accent-bg accent-bg-hover text-white text-sm font-semibold">
-            <i data-lucide="briefcase" class="w-4 h-4"></i>
-            <span>Hire Me</span>
-        </a>
-        <a href="assets/rena-elza-viju-resume.pdf" target="_blank" download
-           class="flex items-center justify-center space-x-2 px-4 py-3 rounded-full shadow-lg bg-slate-900/90 hover:bg-slate-800 text-emerald-100 text-sm font-semibold border border-emerald-500/60">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
-            <span>View CV</span>
-        </a>
-    </div>
+<!-- MAIN CONTENT -->
+<main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16">
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto p-4 sm:p-8 lg:py-16 relative z-10">
+    <!-- HERO -->
+    <section id="home" class="reveal mb-16 sm:mb-20 lg:mb-24">
+        <div class="card-bg rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+            <!-- subtle accent bar -->
+            <div class="absolute -top-16 right-16 h-32 w-72 bg-gradient-to-r from-emerald-500/10 via-sky-400/10 to-transparent blur-3xl"></div>
 
-        <!-- HERO (with gradient + faded photo background) -->
-        <section id="home" class="relative overflow-hidden min-h-[75vh] flex items-center pt-24 pb-12 lg:pt-16 reveal">
-            <!-- Gradient base -->
-            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black via-slate-950 to-emerald-950/80"></div>
+            <p class="text-xs sm:text-sm tracking-[0.3em] text-emerald-300 uppercase mb-3">
+                Hello, I'm
+            </p>
+            <h1 class="heading-font text-4xl sm:text-5xl lg:text-[3.3rem] leading-tight font-extrabold text-slate-50 mb-1">
+                Rena Elza Viju
+            </h1>
+            <h2 class="text-base sm:text-lg font-medium text-emerald-100 mb-5">
+                <span id="typing-role">MCA Student | React &amp; Python Developer | Full-Stack Enthusiast</span>
+                <span class="typing-cursor">|</span>
+            </h2>
 
-            <!-- Faded photo with glitchy overlay feel -->
-            <div class="pointer-events-none absolute inset-y-8 right-[-4rem] md:right-0 w-[70%] md:w-[50%] lg:w-[45%] -z-5">
-                <!-- main image -->
-                <div class="w-full h-full bg-[url('assets/rena-elza-viju.jpg')] bg-cover bg-top opacity-55 mix-blend-screen"
-                     style="filter: saturate(1.2) contrast(1.1);"></div>
-                <!-- subtle stripes / glitch overlay -->
-                <div class="absolute inset-0 opacity-40 mix-blend-overlay bg-[linear-gradient(120deg,rgba(16,185,129,0.35)_0,transparent_20%,transparent_80%,rgba(110,231,183,0.4)_100%)]"></div>
-                <!-- radial highlight -->
-                <div class="absolute -left-24 top-10 w-72 h-72 rounded-full bg-emerald-500/20 blur-3xl"></div>
-            </div>
-
-            <!-- Hero Content -->
-            <div class="w-full space-y-10 relative z-10">
-                <div class="card-bg p-6 lg:p-10 rounded-3xl border-emerald-500/40 shadow-2xl">
-                    <p class="text-sm sm:text-base tracking-[0.28em] text-emerald-300 uppercase mb-2">Hello, I'm</p>
-                    <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2">
-                        Rena Elza Viju
-                    </h1>
-                    <h2 class="text-lg sm:text-xl font-medium text-emerald-100 mb-4">
-                        <span id="typing-role">MCA Student | React &amp; Python Developer | Full-Stack Enthusiast</span>
-                        <span class="typing-cursor">|</span>
-                    </h2>
-                    <p class="text-sm sm:text-base max-w-2xl text-slate-300">
-                        Motivated and results-driven Master of Computer Applications (MCA) student with a strong academic foundation
-                        and practical experience in full-stack development. Passionate about building efficient, user-centric digital solutions.
-                    </p>
-
-                    <!-- Social / CTA -->
-                    <div class="flex flex-wrap gap-4 pt-6">
-                        <a href="https://www.linkedin.com/in/rena-elza-viju-02461b33b/" target="_blank"
-                           class="flex items-center space-x-2 text-slate-100 hover:text-emerald-300 transition transform hover:scale-105 px-4 py-2.5 bg-slate-900/80 rounded-xl shadow-lg border border-emerald-600/60">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            <span class="font-medium">LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/renx005" target="_blank"
-                           class="flex items-center space-x-2 text-slate-100 hover:text-emerald-300 transition transform hover:scale-105 px-4 py-2.5 bg-slate-900/80 rounded-xl shadow-lg border border-emerald-600/60">
-                            <i data-lucide="github" class="w-5 h-5"></i>
-                            <span class="font-medium">GitHub</span>
-                        </a>
-                        <a href="#contact"
-                           class="flex items-center space-x-2 text-white accent-bg accent-bg-hover transition transform hover:scale-105 px-4 py-2.5 rounded-xl shadow-xl font-semibold">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            <span>Get In Touch</span>
-                        </a>
-                    </div>
-
-                    <!-- Desktop quick actions -->
-                    <div class="hidden md:flex space-x-4 pt-4">
-                        <a href="assets/rena-elza-viju-resume.pdf" target="_blank" download
-                           class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-emerald-100 font-semibold border border-emerald-500/70 shadow-md">
-                            <i data-lucide="file-down" class="w-5 h-5"></i>
-                            <span>Download Resume</span>
-                        </a>
-                        <a href="#contact"
-                           class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl accent-bg accent-bg-hover text-white font-semibold shadow-md">
-                            <i data-lucide="briefcase" class="w-5 h-5"></i>
-                            <span>Hire Me</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- About short -->
-                <div id="about" class="mt-4">
-                    <p class="text-lg max-w-4xl text-slate-200 leading-relaxed">
-                        Committed to contributing to innovative, impactful projects while continuously enhancing technical and professional capabilities.
-                        Proficient in Java, Python, HTML, React, and MySQL, with additional hands-on exposure to PHP and TypeScript
-                        through real-world projects. I thrive in fast-paced environments and maintain a proactive learning approach.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills" class="py-12 sm:py-20 lg:py-24 reveal">
-            <h3 class="section-title text-3xl">Technical Skills</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="laptop-code" class="w-8 h-8 mx-auto mb-3 accent-color"></i>
-                    <p class="font-semibold text-white">React &amp; TypeScript</p>
-                    <span class="text-xs text-slate-400">Front-End, Mobile</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="python" class="w-8 h-8 mx-auto mb-3 text-amber-300"></i>
-                    <p class="font-semibold text-white">Python &amp; Flask</p>
-                    <span class="text-xs text-slate-400">Back-End, APIs</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="database" class="w-8 h-8 mx-auto mb-3 text-emerald-300"></i>
-                    <p class="font-semibold text-white">MySQL</p>
-                    <span class="text-xs text-slate-400">Database Management</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="layout-grid" class="w-8 h-8 mx-auto mb-3 text-sky-300"></i>
-                    <p class="font-semibold text-white">HTML/CSS/JS</p>
-                    <span class="text-xs text-slate-400">Web Standards</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="server" class="w-8 h-8 mx-auto mb-3 text-lime-300"></i>
-                    <p class="font-semibold text-white">Full-Stack Development</p>
-                    <span class="text-xs text-slate-400">End-to-End Solutions</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="file-code" class="w-8 h-8 mx-auto mb-3 text-pink-300"></i>
-                    <p class="font-semibold text-white">Java &amp; PHP</p>
-                    <span class="text-xs text-slate-400">Multi-Language</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="code-square" class="w-8 h-8 mx-auto mb-3 text-cyan-300"></i>
-                    <p class="font-semibold text-white">Tailwind &amp; UI/UX</p>
-                    <span class="text-xs text-slate-400">Design &amp; Responsiveness</span>
-                </div>
-                <div class="card-bg p-6 rounded-xl text-center hover:bg-slate-900/80 transition duration-300 transform hover:scale-[1.04]">
-                    <i data-lucide="git-branch" class="w-8 h-8 mx-auto mb-3 text-rose-300"></i>
-                    <p class="font-semibold text-white">Git &amp; Project Mgt.</p>
-                    <span class="text-xs text-slate-400">Collaboration</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="py-12 sm:py-20 lg:py-24 reveal">
-            <h3 class="section-title text-3xl">Featured Projects</h3>
-
-            <div class="space-y-12">
-                <article class="card-bg p-6 sm:p-8 rounded-xl transition duration-300 hover:ring-2 ring-emerald-400/80">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <i data-lucide="heart-pulse" class="w-8 h-8 accent-color"></i>
-                        <h4 class="text-2xl font-bold text-white">Mental Wellness Tracker and Support App</h4>
-                        <span class="ml-auto text-xs sm:text-sm text-slate-300 bg-slate-900/70 px-3 py-1 rounded-full">Mobile App</span>
-                    </div>
-                    <p class="text-slate-200 mb-4">
-                        Developed a full-featured mental well-being platform, demonstrating expertise in modern front-end mobile development and architecture.
-                    </p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 pl-4">
-                        <li>Tech Stack: React, TypeScript, Tailwind CSS, shadcn-ui, Vite.</li>
-                        <li>Features: Mood tracking, journaling, habit building, mindfulness exercises, and insights.</li>
-                        <li>Architecture: Role-based access for users, professionals, and admins with dynamic routing.</li>
-                        <li>Optimization: Offline support via service workers and performance tuning using Vite.</li>
-                    </ul>
-                    <a href="https://github.com/renx005" target="_blank" class="mt-4 inline-flex items-center space-x-2 accent-color hover:text-emerald-200 font-medium group">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                        <span>View Project on GitHub</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </article>
-
-                <article class="card-bg p-6 sm:p-8 rounded-xl transition duration-300 hover:ring-2 ring-emerald-300/80">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <i data-lucide="chef-hat" class="w-8 h-8 text-amber-300"></i>
-                        <h4 class="text-2xl font-bold text-white">Online Recipe Sharing and Management System</h4>
-                        <span class="ml-auto text-xs sm:text-sm text-slate-300 bg-slate-900/70 px-3 py-1 rounded-full">Full Stack (Web)</span>
-                    </div>
-                    <p class="text-slate-200 mb-4">
-                        Dynamic web platform for community-driven recipe sharing and personalized meal management.
-                    </p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 pl-4">
-                        <li>Tech Stack: PHP, MySQL, HTML, CSS, JavaScript.</li>
-                        <li>Features: User registration, search/filter, rating, commenting, and personalized meal plans.</li>
-                        <li>Admin: Content moderation and recipe management via secure admin dashboard.</li>
-                    </ul>
-                    <a href="https://github.com/renx005" target="_blank" class="mt-4 inline-flex items-center space-x-2 text-amber-300 hover:text-amber-200 font-medium group">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                        <span>View Project on GitHub</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </article>
-
-                <article class="card-bg p-6 sm:p-8 rounded-xl transition duration-300 hover:ring-2 ring-emerald-300/80">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <i data-lucide="shopping-cart" class="w-8 h-8 text-lime-300"></i>
-                        <h4 class="text-2xl font-bold text-white">ShopEasy E-commerce Front-End</h4>
-                        <span class="ml-auto text-xs sm:text-sm text-slate-300 bg-slate-900/70 px-3 py-1 rounded-full">Web Application (FE)</span>
-                    </div>
-                    <p class="text-slate-200 mb-4">
-                        Practical e-commerce interface focusing on user flows, cart management, and clean UI.
-                    </p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 pl-4">
-                        <li>Tech Stack: HTML, CSS, Bootstrap, JavaScript, LocalStorage.</li>
-                        <li>Features: User registration, login, product browsing, cart persistence via LocalStorage.</li>
-                        <li>Admin Panel: Product management for demo admin users.</li>
-                    </ul>
-                    <a href="https://github.com/renx005" target="_blank" class="mt-4 inline-flex items-center space-x-2 text-lime-300 hover:text-lime-200 font-medium group">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                        <span>View Project on GitHub</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </article>
-
-                <article class="card-bg p-6 sm:p-8 rounded-xl transition duration-300 hover:ring-2 ring-emerald-400/80">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <i data-lucide="flask-conical" class="w-8 h-8 text-rose-300"></i>
-                        <h4 class="text-2xl font-bold text-white">Flask-Based Web Applications</h4>
-                        <span class="ml-auto text-xs sm:text-sm text-slate-300 bg-slate-900/70 px-3 py-1 rounded-full">Backend Focus</span>
-                    </div>
-                    <p class="text-slate-200 mb-4">
-                        A collection of Python Flask projects exploring API creation and server-side rendering.
-                    </p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 pl-4">
-                        <li>Routing, Jinja templating, form handling, and RESTful API design.</li>
-                        <li>Focus on clean architecture and maintainable code.</li>
-                    </ul>
-                    <a href="https://github.com/renx005" target="_blank" class="mt-4 inline-flex items-center space-x-2 text-rose-300 hover:text-rose-200 font-medium group">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                        <span>View Repository</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </article>
-            </div>
-        </section>
-
-        <!-- EDUCATION & CERTIFICATIONS -->
-        <section id="education" class="py-12 sm:py-20 lg:py-24 reveal">
-            <h3 class="section-title text-3xl">Education & Certifications</h3>
-
-            <div class="space-y-8">
-                <div class="card-bg p-6 rounded-xl">
-                    <h4 class="text-xl font-bold text-white flex items-center mb-4">
-                        <i data-lucide="graduation-cap" class="w-5 h-5 mr-2 accent-color"></i>
-                        Academic Background
-                    </h4>
-                    <div class="space-y-6 border-l-2 border-emerald-700/70 pl-6">
-                        <div class="relative">
-                            <span class="absolute -left-[1.8rem] top-1 w-4 h-4 accent-bg rounded-full border-2 border-black"></span>
-                            <p class="font-semibold text-lg text-white">Master of Computer Applications (MCA)</p>
-                            <p class="text-slate-300">Rajagiri College of Social Sciences, Kalamassery</p>
-                            <p class="text-xs sm:text-sm text-slate-400">Currently Pursuing (Expected Graduation May 2027)</p>
-                        </div>
-                        <div class="relative">
-                            <span class="absolute -left-[1.8rem] top-1 w-4 h-4 bg-slate-600 rounded-full border-2 border-black"></span>
-                            <p class="font-semibold text-lg text-white">Bachelor of Computer Applications (BCA)</p>
-                            <p class="text-slate-300">SCMS School of Technology And Management</p>
-                            <p class="text-xs sm:text-sm text-slate-400">September 2022 - April 2025 (Completed)</p>
-                        </div>
-                        <div class="relative">
-                            <span class="absolute -left-[1.8rem] top-1 w-4 h-4 bg-slate-600 rounded-full border-2 border-black"></span>
-                            <p class="font-semibold text-lg text-white">Senior Secondary School Education</p>
-                            <p class="text-slate-300">Bhavans Newsprint Vidyalaya (Science w/ Informatics Practices)</p>
-                            <p class="text-xs sm:text-sm text-slate-400">June 2020 - March 2022</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="certifications" class="card-bg p-6 rounded-xl">
-                    <h4 class="text-xl font-bold text-white flex items-center mb-4">
-                        <i data-lucide="award" class="w-5 h-5 mr-2 text-amber-300"></i>
-                        Professional Certifications
-                    </h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-slate-950/70 p-3 rounded-lg border border-emerald-700/70">
-                            <p class="font-medium text-white">Data Analysis with Python</p>
-                            <p class="text-xs sm:text-sm text-slate-400">CognitiveClass | May 2025</p>
-                        </div>
-                        <div class="bg-slate-950/70 p-3 rounded-lg border border-emerald-700/70">
-                            <p class="font-medium text-white">AWS APAC - Solutions Architecture Job Simulation</p>
-                            <p class="text-xs sm:text-sm text-slate-400">Forage | May 2025</p>
-                        </div>
-                        <div class="bg-slate-950/70 p-3 rounded-lg border border-emerald-700/70">
-                            <p class="font-medium text-white">Cloud Computing and Distributed System</p>
-                            <p class="text-xs sm:text-sm text-slate-400">NPTEL &amp; IIT Kanpur | Jan–Apr 2025</p>
-                        </div>
-                        <div class="bg-slate-950/70 p-3 rounded-lg border border-emerald-700/70">
-                            <p class="font-medium text-white">Full Stack Web Development</p>
-                            <p class="text-xs sm:text-sm text-slate-400">SCMS School Of Technology And Management | Aug 2024</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="py-12 sm:py-20 lg:py-24 text-center reveal">
-            <h3 class="section-title mx-auto text-3xl mb-8">Let's Connect</h3>
-
-            <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
-                I'm actively looking for opportunities in full-stack development.
-                Feel free to reach out for collaboration or just to say hello!
+            <p class="text-sm sm:text-base text-slate-200 max-w-2xl mb-6">
+                Motivated and results-driven Master of Computer Applications (MCA) student with a strong academic foundation
+                and hands-on experience in full-stack development. Passionate about building efficient, user-centric digital
+                solutions with clean, maintainable code.
             </p>
 
-            <div class="grid gap-10 md:grid-cols-2 md:items-start">
-                <div class="space-y-6">
-                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="mailto:renaelzx@gmail.com"
-                           class="flex items-center justify-center space-x-2 text-white accent-bg accent-bg-hover transition transform hover:scale-105 px-5 py-4 rounded-xl shadow-xl font-bold text-lg">
-                            <i data-lucide="send" class="w-5 h-5"></i>
-                            <span>Email Me Directly</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rena-elza-viju-02461b33b/" target="_blank"
-                           class="flex items-center justify-center space-x-2 text-emerald-200 border border-emerald-500 hover:bg-emerald-500/10 transition transform hover:scale-105 px-5 py-4 rounded-xl shadow-md font-bold text-lg">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            <span>Connect on LinkedIn</span>
-                        </a>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-400 max-w-sm mx-auto">
-                        Prefer email? Use the button above. Prefer a form? Fill it out on the right and it will land in my inbox.
-                    </p>
-                </div>
+            <div class="flex flex-wrap gap-3 mb-4">
+                <a href="https://www.linkedin.com/in/rena-elza-viju-02461b33b/" target="_blank"
+                   class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-950/70 hover:bg-slate-900 text-slate-100 border border-slate-700/80 text-sm shadow">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/renx005" target="_blank"
+                   class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-950/70 hover:bg-slate-900 text-slate-100 border border-slate-700/80 text-sm shadow">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="#contact"
+                   class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl accent-bg accent-bg-hover text-slate-950 text-sm font-semibold shadow-lg">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    <span>Hire Me</span>
+                </a>
+            </div>
 
-                <!-- Contact form -->
-                <div class="card-bg rounded-2xl p-6 sm:p-7 text-left">
-                    <h4 class="text-xl font-semibold text-white mb-4 flex items-center">
-                        <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-emerald-300"></i>
-                        Send me a message
+            <div class="flex flex-wrap gap-3">
+                <a href="assets/rena-elza-viju-resume.pdf" target="_blank" download
+                   class="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-950/80 hover:bg-slate-900 text-emerald-100 text-sm border border-emerald-500/70 shadow">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span>Download Resume</span>
+                </a>
+                <span class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/15 text-[11px] text-emerald-200 border border-emerald-500/50">
+                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                    <span>Open to internships &amp; projects</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- mini about under hero -->
+        <p id="about" class="mt-8 text-sm sm:text-base text-slate-200 max-w-3xl">
+            Committed to contributing to innovative, impactful projects while continuously enhancing technical and professional capabilities.
+            Proficient in Java, Python, HTML, React, and MySQL, with additional hands-on exposure to PHP and TypeScript through real-world
+            projects. I thrive in fast-paced environments and maintain a proactive learning approach.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal py-10 sm:py-12 lg:py-14">
+        <h3 class="section-title text-2xl sm:text-3xl">Technical Skills</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="laptop-code" class="w-7 h-7 mx-auto mb-3 text-emerald-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">React &amp; TypeScript</p>
+                <span class="text-[11px] text-slate-400">Front-End, SPA</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="python" class="w-7 h-7 mx-auto mb-3 text-amber-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">Python &amp; Flask</p>
+                <span class="text-[11px] text-slate-400">Back-End, APIs</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="database" class="w-7 h-7 mx-auto mb-3 text-cyan-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">MySQL</p>
+                <span class="text-[11px] text-slate-400">Data Modelling</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="layout-grid" class="w-7 h-7 mx-auto mb-3 text-sky-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">HTML/CSS/JS</p>
+                <span class="text-[11px] text-slate-400">Web Standards</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="server" class="w-7 h-7 mx-auto mb-3 text-lime-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">Full-Stack Dev</p>
+                <span class="text-[11px] text-slate-400">End-to-End</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="file-code" class="w-7 h-7 mx-auto mb-3 text-pink-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">Java &amp; PHP</p>
+                <span class="text-[11px] text-slate-400">Multi-language</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="code-square" class="w-7 h-7 mx-auto mb-3 text-fuchsia-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">Tailwind &amp; UI/UX</p>
+                <span class="text-[11px] text-slate-400">Responsive Design</span>
+            </div>
+            <div class="card-bg p-5 rounded-xl text-center hover:bg-slate-900/80 transition transform hover:scale-[1.03]">
+                <i data-lucide="git-branch" class="w-7 h-7 mx-auto mb-3 text-rose-300"></i>
+                <p class="font-semibold text-slate-50 text-sm">Git &amp; Collab</p>
+                <span class="text-[11px] text-slate-400">Team Projects</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal py-10 sm:py-12 lg:py-14">
+        <h3 class="section-title text-2xl sm:text-3xl">Featured Projects</h3>
+
+        <div class="space-y-10">
+            <article class="card-bg p-6 sm:p-7 rounded-2xl hover:ring-2 ring-emerald-400/80 transition">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <i data-lucide="heart-pulse" class="w-7 h-7 text-emerald-300"></i>
+                    <h4 class="text-xl sm:text-2xl font-bold text-slate-50">
+                        Mental Wellness Tracker and Support App
                     </h4>
-                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 text-sm">
-                        <!-- Replace with your real access key when you create it -->
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        <input type="hidden" name="subject" value="New Portfolio Contact from renx005.github.io">
-                        <input type="hidden" name="redirect" value="https://renx005.github.io/#contact">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+                    <span class="ml-auto text-[11px] sm:text-xs text-slate-300 bg-slate-950/70 px-3 py-1 rounded-full">
+                        Mobile / Front-End
+                    </span>
+                </div>
+                <p class="text-sm sm:text-base text-slate-200 mb-3">
+                    A mental well-being platform focusing on mood tracking, journaling, and habit-building, built to explore
+                    modern React-based mobile interfaces and architecture.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1.5 pl-4">
+                    <li>Tech Stack: React, TypeScript, Tailwind CSS, shadcn-ui, Vite.</li>
+                    <li>Features: Mood logs, daily habits, mindfulness exercises, and insights.</li>
+                    <li>Architecture: Role-based access for users, professionals, and admins.</li>
+                    <li>Performance: Optimized with Vite and component-level code-splitting.</li>
+                </ul>
+                <a href="https://github.com/renx005" target="_blank"
+                   class="mt-4 inline-flex items-center space-x-2 text-emerald-300 hover:text-emerald-200 text-sm font-medium group">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>View Project on GitHub</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </article>
 
-                        <div>
-                            <label class="block mb-1 text-slate-200" for="name">Full Name</label>
-                            <input id="name" name="name" type="text" required
-                                   class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-emerald-900/70 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
-                                   placeholder="Your name">
-                        </div>
-                        <div>
-                            <label class="block mb-1 text-slate-200" for="email">Email</label>
-                            <input id="email" name="email" type="email" required
-                                   class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-emerald-900/70 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
-                                   placeholder="you@example.com">
-                        </div>
-                        <div>
-                            <label class="block mb-1 text-slate-200" for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required
-                                      class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-emerald-900/70 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
-                                      placeholder="Tell me about your project, opportunity, or question..."></textarea>
-                        </div>
-                        <button type="submit"
-                                class="w-full inline-flex justify-center items-center space-x-2 px-4 py-3 rounded-lg accent-bg accent-bg-hover text-white font-semibold shadow-md">
-                            <i data-lucide="send" class="w-4 h-4"></i>
-                            <span>Send Message</span>
-                        </button>
-                        <p class="text-[11px] text-slate-500 mt-2">
-                            This form is powered by Web3Forms. Your message will be securely delivered to my email.
-                        </p>
-                    </form>
+            <article class="card-bg p-6 sm:p-7 rounded-2xl hover:ring-2 ring-emerald-300/80 transition">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <i data-lucide="chef-hat" class="w-7 h-7 text-amber-300"></i>
+                    <h4 class="text-xl sm:text-2xl font-bold text-slate-50">
+                        Online Recipe Sharing and Management System
+                    </h4>
+                    <span class="ml-auto text-[11px] sm:text-xs text-slate-300 bg-slate-950/70 px-3 py-1 rounded-full">
+                        Full Stack Web
+                    </span>
+                </div>
+                <p class="text-sm sm:text-base text-slate-200 mb-3">
+                    A community-driven platform for sharing and organizing recipes, with options for meal planning and
+                    personalized browsing.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1.5 pl-4">
+                    <li>Tech Stack: PHP, MySQL, HTML, CSS, JavaScript.</li>
+                    <li>Features: User auth, recipe search/filter, rating, comments.</li>
+                    <li>Admin: Content moderation and recipe management panel.</li>
+                </ul>
+                <a href="https://github.com/renx005" target="_blank"
+                   class="mt-4 inline-flex items-center space-x-2 text-amber-300 hover:text-amber-200 text-sm font-medium group">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>View Project on GitHub</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </article>
+
+            <article class="card-bg p-6 sm:p-7 rounded-2xl hover:ring-2 ring-emerald-300/80 transition">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <i data-lucide="shopping-cart" class="w-7 h-7 text-lime-300"></i>
+                    <h4 class="text-xl sm:text-2xl font-bold text-slate-50">
+                        ShopEasy E-commerce Front-End
+                    </h4>
+                    <span class="ml-auto text-[11px] sm:text-xs text-slate-300 bg-slate-950/70 px-3 py-1 rounded-full">
+                        Front-End Web
+                    </span>
+                </div>
+                <p class="text-sm sm:text-base text-slate-200 mb-3">
+                    A mini e-commerce interface focusing on user flows, cart management, and clean component-based layout.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1.5 pl-4">
+                    <li>Tech Stack: HTML, CSS, Bootstrap, JavaScript, LocalStorage.</li>
+                    <li>Features: Auth mockup, product listing, shopping cart with persistence.</li>
+                    <li>Admin: Simple UI for adding and updating products (client-side only).</li>
+                </ul>
+                <a href="https://github.com/renx005" target="_blank"
+                   class="mt-4 inline-flex items-center space-x-2 text-lime-300 hover:text-lime-200 text-sm font-medium group">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>View Project on GitHub</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </article>
+
+            <article class="card-bg p-6 sm:p-7 rounded-2xl hover:ring-2 ring-emerald-400/80 transition">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <i data-lucide="flask-conical" class="w-7 h-7 text-rose-300"></i>
+                    <h4 class="text-xl sm:text-2xl font-bold text-slate-50">
+                        Flask-Based Web Applications
+                    </h4>
+                    <span class="ml-auto text-[11px] sm:text-xs text-slate-300 bg-slate-950/70 px-3 py-1 rounded-full">
+                        Backend Practice
+                    </span>
+                </div>
+                <p class="text-sm sm:text-base text-slate-200 mb-3">
+                    A set of small Flask projects exploring routing, templating, and building REST-style APIs in Python.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-300 space-y-1.5 pl-4">
+                    <li>Learned Jinja templates, HTTP methods, and form handling.</li>
+                    <li>Built small REST endpoints for JSON-based APIs.</li>
+                </ul>
+                <a href="https://github.com/renx005" target="_blank"
+                   class="mt-4 inline-flex items-center space-x-2 text-rose-300 hover:text-rose-200 text-sm font-medium group">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>View Repository</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="reveal py-10 sm:py-12 lg:py-14">
+        <h3 class="section-title text-2xl sm:text-3xl">Education &amp; Certifications</h3>
+
+        <div class="space-y-8">
+            <!-- Education -->
+            <div class="card-bg p-6 sm:p-7 rounded-2xl">
+                <h4 class="text-lg sm:text-xl font-bold text-slate-50 flex items-center mb-4">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 mr-2 text-emerald-300"></i>
+                    Academic Background
+                </h4>
+                <div class="space-y-5 border-l border-emerald-700/60 pl-5">
+                    <div class="relative">
+                        <span class="absolute -left-[1.65rem] top-1 w-3.5 h-3.5 rounded-full accent-bg"></span>
+                        <p class="font-semibold text-slate-50 text-sm sm:text-base">Master of Computer Applications (MCA)</p>
+                        <p class="text-xs sm:text-sm text-slate-300">Rajagiri College of Social Sciences, Kalamassery</p>
+                        <p class="text-[11px] text-slate-400">Currently Pursuing · Expected Graduation May 2027</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -left-[1.65rem] top-1 w-3.5 h-3.5 rounded-full bg-slate-600"></span>
+                        <p class="font-semibold text-slate-50 text-sm sm:text-base">Bachelor of Computer Applications (BCA)</p>
+                        <p class="text-xs sm:text-sm text-slate-300">SCMS School of Technology And Management</p>
+                        <p class="text-[11px] text-slate-400">September 2022 – April 2025 · Completed</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -left-[1.65rem] top-1 w-3.5 h-3.5 rounded-full bg-slate-600"></span>
+                        <p class="font-semibold text-slate-50 text-sm sm:text-base">Senior Secondary School (Science + IP)</p>
+                        <p class="text-xs sm:text-sm text-slate-300">Bhavans Newsprint Vidyalaya</p>
+                        <p class="text-[11px] text-slate-400">June 2020 – March 2022</p>
+                    </div>
                 </div>
             </div>
 
-            <footer class="mt-16 pt-6 border-t border-slate-800 text-slate-500 text-xs sm:text-sm">
-                Designed and Developed by Rena Viju · Built with Tailwind CSS
-            </footer>
-        </section>
-    </main>
+            <!-- Certifications -->
+            <div id="certifications" class="card-bg p-6 sm:p-7 rounded-2xl">
+                <h4 class="text-lg sm:text-xl font-bold text-slate-50 flex items-center mb-4">
+                    <i data-lucide="award" class="w-5 h-5 mr-2 text-amber-300"></i>
+                    Professional Certifications
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-emerald-700/60">
+                        <p class="font-medium text-slate-50 text-sm">Data Analysis with Python</p>
+                        <p class="text-[11px] text-slate-400">CognitiveClass · May 2025</p>
+                    </div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-emerald-700/60">
+                        <p class="font-medium text-slate-50 text-sm">AWS APAC - Solutions Architecture Job Simulation</p>
+                        <p class="text-[11px] text-slate-400">Forage · May 2025</p>
+                    </div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-emerald-700/60">
+                        <p class="font-medium text-slate-50 text-sm">Cloud Computing and Distributed System</p>
+                        <p class="text-[11px] text-slate-400">NPTEL &amp; IIT Kanpur · Jan–Apr 2025</p>
+                    </div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-emerald-700/60">
+                        <p class="font-medium text-slate-50 text-sm">Full Stack Web Development</p>
+                        <p class="text-[11px] text-slate-400">SCMS School Of Technology And Management · Aug 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Lucide icons
-            if (window.lucide) {
-                lucide.createIcons();
-            }
+    <!-- CONTACT -->
+    <section id="contact" class="reveal py-10 sm:py-12 lg:py-14">
+        <h3 class="section-title mx-auto text-2xl sm:text-3xl mb-6 text-center">Let's Connect</h3>
 
-            // Typing effect
-            const roles = [
-                "MCA Student",
-                "React & Python Developer",
-                "Full-Stack Enthusiast"
-            ];
-            const typingElement = document.getElementById("typing-role");
-            let currentRoleIndex = 0;
-            let currentCharIndex = 0;
-            let isDeleting = false;
+        <p class="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto mb-8 text-center">
+            I'm actively looking for opportunities in full-stack development and backend-focused roles. Whether it's an internship,
+            a freelance project, or a collaboration, feel free to reach out.
+        </p>
 
-            function type() {
-                const currentRole = roles[currentRoleIndex];
-                if (!isDeleting) {
-                    currentCharIndex++;
-                    typingElement.textContent = currentRole.substring(0, currentCharIndex);
-                    if (currentCharIndex === currentRole.length) {
-                        setTimeout(() => { isDeleting = true; }, 1200);
-                    }
-                } else {
-                    currentCharIndex--;
-                    typingElement.textContent = currentRole.substring(0, currentCharIndex);
-                    if (currentCharIndex === 0) {
-                        isDeleting = false;
-                        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-                    }
+        <div class="grid gap-8 md:grid-cols-2 md:items-start">
+            <!-- Quick links -->
+            <div class="space-y-5">
+                <div class="flex flex-col space-y-3">
+                    <a href="mailto:renaelzx@gmail.com"
+                       class="flex items-center justify-center space-x-2 px-5 py-4 rounded-xl accent-bg accent-bg-hover text-slate-950 font-semibold text-sm shadow-lg">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Email Me Directly</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rena-elza-viju-02461b33b/" target="_blank"
+                       class="flex items-center justify-center space-x-2 px-5 py-4 rounded-xl bg-slate-950/80 hover:bg-slate-900 text-emerald-100 font-semibold text-sm border border-emerald-500/70 shadow">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+                </div>
+                <p class="text-[11px] sm:text-xs text-slate-400 max-w-sm">
+                    Prefer email? Use the button above. Prefer a form? Fill it out on the right – your message will land in my inbox.
+                </p>
+            </div>
+
+            <!-- Web3Forms Contact Form -->
+            <div class="card-bg rounded-2xl p-6 sm:p-7 text-left">
+                <h4 class="text-lg font-semibold text-slate-50 mb-3 flex items-center">
+                    <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-emerald-300"></i>
+                    Send me a message
+                </h4>
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 text-sm">
+                    <!-- 🔐 Replace this with your real Web3Forms access key -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="New Portfolio Contact from renx005.github.io">
+                    <input type="hidden" name="redirect" value="https://renx005.github.io/#contact">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+                    <div>
+                        <label for="name" class="block mb-1 text-slate-200">Full Name</label>
+                        <input id="name" name="name" type="text" required
+                               class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
+                               placeholder="Your name">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block mb-1 text-slate-200">Email</label>
+                        <input id="email" name="email" type="email" required
+                               class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
+                               placeholder="you@example.com">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block mb-1 text-slate-200">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-slate-100 placeholder-slate-500"
+                                  placeholder="Tell me about your project, opportunity, or question..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full inline-flex justify-center items-center space-x-2 px-4 py-3 rounded-lg accent-bg accent-bg-hover text-slate-950 font-semibold shadow-md">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Send Message</span>
+                    </button>
+
+                    <p class="text-[11px] text-slate-500 mt-2">
+                        This form is powered by Web3Forms. Your message will be securely delivered to my email.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <footer class="mt-14 pt-5 border-t border-slate-800 text-center text-[11px] sm:text-xs text-slate-500">
+            Designed and Developed by Rena Elza Viju · Built with HTML, Tailwind CSS &amp; GitHub Pages
+        </footer>
+    </section>
+</main>
+
+<!-- Scripts -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Lucide
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        // Typing effect
+        const roles = [
+            "MCA Student",
+            "React & Python Developer",
+            "Full-Stack Enthusiast"
+        ];
+        const typingElement = document.getElementById("typing-role");
+        let currentRoleIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentRole = roles[currentRoleIndex];
+            if (!isDeleting) {
+                currentCharIndex++;
+                typingElement.textContent = currentRole.substring(0, currentCharIndex);
+                if (currentCharIndex === currentRole.length) {
+                    setTimeout(() => { isDeleting = true; }, 1200);
                 }
-                const speed = isDeleting ? 60 : 100;
-                setTimeout(type, speed);
+            } else {
+                currentCharIndex--;
+                typingElement.textContent = currentRole.substring(0, currentCharIndex);
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                }
             }
-            if (typingElement) type();
+            const speed = isDeleting ? 60 : 100;
+            setTimeout(type, speed);
+        }
+        if (typingElement) type();
 
-            // Scroll reveal
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
+        // Scroll reveal
+        const revealElements = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
 
-            revealElements.forEach(el => observer.observe(el));
-        });
-    </script>
+        revealElements.forEach(el => observer.observe(el));
+    });
+</script>
+
 </body>
 </html>
-
